@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/home/home"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#999999",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "sjj122",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}
