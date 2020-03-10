@@ -1,66 +1,62 @@
 // pages/home.js
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    name: app.globalData.name,
+    blog: {},
+    counter: 0
+  },
+  handleGetUserInfo (event) {
+    console.log(event.detail.userInfo)
+  },
+  // 监听组件发来的事件
+  hanldeIncrement () {
+    this.setData({
+      counter: this.data.counter + 1
+    })
+  },
+  // 监听tabcontrol点击
+  tabControlClick (e) {
+    console.log(e)
+  },
+  // 页面直接修改组件内数据
+  handleComIncrement () {
+    const my_cpn = this.selectComponent('#my-cpn')
+    my_cpn.changeCounter(20)
+  },
+  onLoad () {
+    wx.request({
+      url: 'http://101.37.91.208:3000/getTopContent',
+      success: (res) => {
+        this.setData({
+          blog: res.data.result
+        })
+      }
+    })
+  },
+  onShow () {
+    
+  },
+  onReady () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onHide () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  // 页面滚动
+  onPageScroll (obj) {
+    // console.log(obj)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  // 上拉加载更多
+  onReachBottom () {
+    console.log('到底了')
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  // 下拉刷新
+  onPullDownRefresh () {
+    console.log('用户下拉了')
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // tabbar 页面回调函数
+  onTabItemTap () {
+    
   }
 })

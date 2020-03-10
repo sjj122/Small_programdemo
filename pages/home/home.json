@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-cpn": "/components/my-cpn/my-cpn",
+    "my-tab-control": "/components/my-tab-control/my-tab-control",
+    "my-slot": "/components/my-slot/my-slot"
+  },
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": true
 }

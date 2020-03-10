@@ -1,0 +1,24 @@
+<!--pages/wxml/wxml.wxml-->
+<text>{{nowTime}}</text>
+
+<view></view>
+
+<!-- 定义模板 -->
+<template name="contentItem">
+  <button size="mini">{{btnText}}</button>
+  <text>{{textText}}</text>
+</template>
+
+<!-- 使用模板 -->
+<template is="contentItem" data="{{btnText: '按钮', textText: '哈哈哈哈'}}" />
+
+<!-- 这个路径只能使用相对路径 -->
+<!-- 双标签 -->
+<wxs src="../../wxs/info.wxs" module="info"></wxs>
+<wxs src="../../wxs/format.wxs" module="format"></wxs>
+
+<text>\n{{info.sum(30, 60)}}\n</text>
+<text>{{format.priceFormat("100.011010", 1)}}</text>
+<text>\n{{timeStamp}}</text>
+
+<button bindtap='handleClick' data-value='123'>点我</button>

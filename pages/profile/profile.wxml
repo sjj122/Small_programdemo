@@ -1,0 +1,22 @@
+<!--pages/profile/profile.wxml-->
+<button size='mini' plain type='warn' loading>hhh</button>
+
+<button size='mini' hover-class='active'>按钮</button>
+
+<!-- 滚动组件 -->
+<scroll-view class='container1' scroll-x>
+  <view wx:for="{{100}}" wx:key="{{item}}" class='item1'>{{item}}</view>
+</scroll-view>
+
+<view class='box' hover-class='active'></view>
+
+<image src='/assets/icon/home.png' show-menu-by-longpress></image>
+
+<button catchtap='handleChooseImage'>选择图片</button>
+
+<!-- <image src='{{imageUrl}}'></image> -->
+
+<image wx:for="{{5}}" wx:key=""
+src='https://img-bss.csdn.net/1583655368553.jpg'
+bindload='handleImageLoad'
+lazy-load mode='widthFix'></image>

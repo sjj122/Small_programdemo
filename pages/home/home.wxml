@@ -1,2 +1,31 @@
 <!--pages/home.wxml-->
-<text>哈哈哈</text>
+<text>{{name}}</text>
+<button size='mini' 
+        open-type='getUserInfo'
+        bindgetuserinfo='handleGetUserInfo'>
+        获取授权信息
+</button>
+<!-- <open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data> -->
+
+<!-- <text>{{blog.b_title}}</text>
+<text>{{blog.b_content_html}}</text> -->
+<view>---------------------------------</view>
+
+<text>\n当前计数：{{counter}}</text>
+<!-- 使用组件 -->
+<my-cpn id="my-cpn" bind:increment="hanldeIncrement"></my-cpn>
+<!-- 直接选中组件，修改数据/调用方法 -->
+<button size="mini" catchtap='handleComIncrement'>改变组件内计数</button>
+
+<my-tab-control
+    titles="{{['衣服','裤子','鞋子']}}"
+    bind:tabControlClick="tabControlClick"
+></my-tab-control>
+
+<view>--------------------------------------</view>
+
+<!-- 使用含有组件的插槽 -->
+<my-slot>
+  <slider slot="slot1" value='60'></slider>
+</my-slot>
